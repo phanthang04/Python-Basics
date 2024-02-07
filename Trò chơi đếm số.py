@@ -1,17 +1,17 @@
 import random
 import math
 # Taking Inputs
-lower = int(input("Enter Lower bound:- "))
+lower = int(input("Nhập giới hạn dưới: "))
 
 # Taking Inputs
-upper = int(input("Enter Upper bound:- "))
+upper = int(input("Nhập giới hạn trên: "))
 
 # generating random number between
 # the lower and upper
 x = random.randint(lower, upper)
-print("\n\tYou've only ", 
+print("\n\tBạn chỉ có ", 
 	round(math.log(upper - lower + 1, 2)),
-	" chances to guess the integer!\n")
+	" cơ hội để đoán số. Chúc bạn may mắn!\n")
 
 # Initializing the number of guesses.
 count = 0
@@ -22,23 +22,21 @@ while count < math.log(upper - lower + 1, 2):
 	count += 1
 
 	# taking guessing number as input
-	guess = int(input("Guess a number:- "))
+	guess = int(input("Mời đoán số:- "))
 
 	# Condition testing
 	if x == guess:
-		print("Congratulations you did it in ",
-			count, " try")
+		print("Chúc mừng bạn đã đoán đúng!")
 		# Once guessed, loop will break
 		break
 	elif x > guess:
-		print("You guessed too small!")
+		print("Bạn đoán quá thấp!")
 	elif x < guess:
-		print("You Guessed too high!")
+		print("Bạn đoán quá cao!")
 
 # If Guessing is more than required guesses,
 # shows this output.
 if count >= math.log(upper - lower + 1, 2):
-	print("\nThe number is %d" % x)
-	print("\tBetter Luck Next time!")
+	print("\nSố cần đoán là %d" % x)
+	print("\tChúc bạn may mắn lần sau!")
 
-# Better to use This source Code on pycharm!
